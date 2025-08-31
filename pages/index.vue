@@ -13,8 +13,8 @@
           <h2 class="line-1 anim-typewriter max-w-fit">{{ config.role }}</h2>
         </span>
         <a
-          href="/resume/Sherzod_Axdov_Resume.pdf"
-          download="Sherzod_Axdov_Resume.pdf"
+          href="/resume/Sherzod_Axadov.pdf"
+          download="Sherzod_Resume.pdf"
           class="mt-4 inline-block px-4 py-1 text-white bg-[#0e2535] rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
         >
           Download My Resume
