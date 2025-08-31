@@ -68,6 +68,11 @@
       }
     },
     "social": {
+      "telegram": {
+        "title": "Telegram profile",
+        "url": "https://t.me/",
+        "user": "axadovsh_020"
+      },
       "github": {
         "title": "Github profile",
         "url": "https://github.com/",
