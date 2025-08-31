@@ -1,0 +1,13 @@
+<svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="0.652344" y="0.695801" width="28" height="28" rx="2" fill="#00DC82"/>
+<g clip-path="url(#clip0_nuxt)">
+<path d="M8.5 20L14.5 9L20.5 20H8.5Z" stroke="#011221" stroke-width="1.2" fill="none"/>
+<path d="M11.5 20L14.5 15L17.5 20H11.5Z" fill="#011221"/>
+<text x="14.5" y="23" text-anchor="middle" font-family="Arial, sans-serif" font-size="2.5" font-weight="bold" fill="#011221">N</text>
+</g>
+<defs>
+<clipPath id="clip0_nuxt">
+<rect width="20.4418" height="20.4418" fill="white" transform="translate(4.43164 4.47485)"/>
+</clipPath>
+</defs>
+</svg>

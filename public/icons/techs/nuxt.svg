@@ -1,0 +1,5 @@
+<svg width="23" height="20" viewBox="0 0 23 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4.5 16L11.5 3L18.5 16H4.5Z" stroke="#607B96" stroke-width="1.5" fill="none"/>
+<path d="M8.5 16L11.5 10L14.5 16H8.5Z" fill="#607B96"/>
+<text x="11.5" y="18.5" text-anchor="middle" font-family="Arial" font-size="3" fill="#607B96">NUXT</text>
+</svg>

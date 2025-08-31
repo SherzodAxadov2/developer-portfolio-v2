@@ -87,6 +87,16 @@
     "find_me_also_in": {
       "title": "find-me-also-in",
       "sources": {
+        "linkedin": {
+          "title": "LinkedIn profile",
+          "url": "https://linkedin.com/in/",
+          "user": "axadov"
+        },
+        "leetcode": {
+          "title": "LeetCode profile",
+          "url": "https://leetcode.com/",
+          "user": "sherzodaxadov"
+        },
         "youtube": {
           "title": "YouTube channel",
           "url": "https://www.youtube.com/",
@@ -116,46 +126,32 @@
   },
   "projects": {
     "1": {
-      "title": "_ui-animations",
-      "description": "Duis aute irure dolor in velit esse cillum dolore.",
-      "img": "/images/projects/ui-animations2.png",
-      "tech": ["Flutter"],
-      "url": "https://github.com/"
+      "title": "_zett",
+      "description": "Business management platform with inventory, sales and reporting modules.",
+      "img": "/images/projects/zett.png",
+      "tech": ["Vue"],
+      "url": "https://app.zett.uz"
     },
     "2": {
-      "title": "_ai-resources",
-      "description": "Duis aute irure dolor in velit esse cillum dolore.",
-      "img": "/images/projects/ai-resources.png",
-      "tech": ["Gatsby"],
-      "url": "https://github.com/"
+      "title": "_it-park",
+      "description": "IT Park management system with authentication and user portal.",
+      "img": "/images/projects/it-park.png",
+      "tech": ["Vue"],
+      "url": "https://my.it-park.uz/login-esi"
     },
     "3": {
-      "title": "_worldmap",
-      "description": "Duis aute irure dolor in velit esse cillum dolore.",
-      "img": "/images/projects/worldmap.png",
-      "tech": ["Angular"],
-      "url": "https://github.com/"
+      "title": "_pmi",
+      "description": "Government project management interface for MIIT ministry.",
+      "img": "/images/projects/pmi.png",
+      "tech": ["Vue"],
+      "url": "https://pmi.miit.uz"
     },
     "4": {
-      "title": "_ui-animations",
-      "description": "Duis aute irure dolor in velit esse cillum dolore.",
-      "img": "/images/projects/ui-animations.png",
-      "tech": ["React"],
-      "url": "https://github.com/"
-    },
-    "5": {
-      "title": "_tetris-game",
-      "description": "Duis aute irure dolor in velit esse cillum dolore.",
-      "img": "/images/projects/tetris-game.png",
-      "tech": ["React"],
-      "url": "https://github.com/"
-    },
-    "6": {
-      "title": "_ethereum",
-      "description": "Duis aute irure dolor in velit esse cillum dolore.",
-      "img": "/images/projects/ethereum.png",
-      "tech": ["Vue"],
-      "url": "https://github.com/"
+      "title": "_reyting",
+      "description": "Rating and evaluation system for government institutions.",
+      "img": "/images/projects/reyting.png",
+      "tech": ["Vue", "Nuxt"],
+      "url": "https://reyting.miit.uz/"
     }
   }
 }
