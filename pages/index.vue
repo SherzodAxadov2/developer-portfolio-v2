@@ -59,6 +59,7 @@ const isMobile = ref(false);
 const loading = ref(false);
 
 onMounted(() => {
+  console.log("Hey show me window!");
   if (window.innerWidth <= 1024) isMobile.value = true;
   window.addEventListener("resize", handleResize);
 });
