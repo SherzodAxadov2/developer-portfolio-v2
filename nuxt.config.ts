@@ -1,5 +1,6 @@
 const config = require("./developer.json");
 const siteTitle = `${config.name} | ${config.role}`;
+const siteDescription = `${config.name} - ${config.role}. Frontend developer from Uzbekistan with 2+ years building scalable web applications using Vue.js ecosystem.`;
 
 /*
  * Nuxt 3 Config File
@@ -8,52 +9,100 @@ const siteTitle = `${config.name} | ${config.role}`;
 export default defineNuxtConfig({
   compatibilityDate: "2025-02-28",
   devtools: { enabled: true },
+
   /**
-   * * App Config
-   * app config: https://nuxt.com/docs/api/configuration/nuxt-config#app
-   * head config: https://nuxt.com/docs/api/configuration/nuxt-config#head
-   * meta config: https://nuxt.com/docs/getting-started/seo-meta
-   * pageTransition config: https://nuxt.com/docs/getting-started/transitions#transitions
-   * TODO: Add more meta tags for SEO
-   * TODO: Add tags for social media sharing
-   * TODO: Migrate apple-touch-icon config to manifest.json
+   * * App Config - Enhanced SEO Configuration
    */
   app: {
     head: {
       htmlAttrs: {
-        lang: "en", // App language
+        lang: "en",
       },
-      title: siteTitle, // App window nav title
+      title: siteTitle,
+      titleTemplate: "%s | Sherzod Axadov",
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { name: "format-detection", content: "telephone=no" },
+
+        { name: "title", content: siteTitle },
+        { name: "description", content: siteDescription },
         {
-          hid: "description",
-          name: "description",
-          content: "A awesome developer portfolio design.",
+          name: "keywords",
+          content:
+            "frontend developer, vue.js, nuxt.js, javascript, typescript, web development, portfolio, uzbekistan",
         },
-        { hid: "og:title", property: "og:title", content: siteTitle },
+        { name: "author", content: config.name },
+        { name: "robots", content: "index, follow" },
         {
-          hid: "og:description",
-          property: "og:description",
-          content: "A awesome developer portfolio design.",
+          name: "googlebot",
+          content:
+            "index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1",
         },
-        { hid: "og:image", property: "og:image", content: "demo-share.jpg" },
+
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://axadev.uz/" },
+        { property: "og:title", content: siteTitle },
+        { property: "og:description", content: siteDescription },
         {
-          hid: "og:url",
-          property: "og:url",
-          content: "https://developer-portfolio-v1.netlify.app/",
+          property: "og:image",
+          content: "https://axadev.uz/images/demo-share.png",
         },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:site_name", content: "Sherzod Axadov Portfolio" },
+        { property: "og:locale", content: "en_US" },
+
+        { name: "twitter:card", content: "summary_large_image" },
+        { name: "twitter:url", content: "https://axadev.uz/" },
+        { name: "twitter:title", content: siteTitle },
+        { name: "twitter:description", content: siteDescription },
+        {
+          name: "twitter:image",
+          content: "https://axadev.uz/images/demo-share.png",
+        },
+        { name: "twitter:creator", content: "@sherzodaxadov" },
+
         { name: "theme-color", content: "#010C15" },
+        { name: "msapplication-TileColor", content: "#010C15" },
         {
           name: "google-site-verification",
           content: "70nNFYtDcCILuvKxwyqA9RXeekI2Q-jSm1-ny4UiesI",
         },
-        // ...
       ],
       link: [
-        { rel: "manifest", href: "pwa/manifest.json" },
-        { rel: "apple-touch-icon", href: "pwa/icons/apple-touch-icon.png" },
+        { rel: "canonical", href: "https://axadev.uz/" },
+        { rel: "manifest", href: "/pwa/manifest.json" },
+        { rel: "apple-touch-icon", href: "/pwa/icons/apple-touch-icon.png" },
+        { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      ],
+      script: [
+        {
+          type: "application/ld+json",
+          innerHTML: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: config.name,
+            jobTitle: config.role,
+            description: siteDescription,
+            url: "https://axadev.uz",
+            image: "https://axadev.uz/images/demo-share.png",
+            sameAs: [
+              `https://github.com/${config.contacts.social.github.user}`,
+              `https://linkedin.com/in/${config.contacts.find_me_also_in.sources.linkedin.user}`,
+              `https://twitter.com/${config.contacts.social.twitter.user}`,
+            ],
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "UZ",
+              addressRegion: "Tashkent",
+            },
+            alumniOf: {
+              "@type": "Organization",
+              name: "Tashkent University of Information Technologies",
+            },
+          }),
+        },
       ],
     },
   },

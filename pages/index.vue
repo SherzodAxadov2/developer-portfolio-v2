@@ -55,6 +55,22 @@ import DevConfig from "~/developer.json";
 
 const config = ref(DevConfig);
 
+useSEO({
+  title: `${DevConfig.name} | ${DevConfig.role}`,
+  description: `${DevConfig.name} - ${DevConfig.role}. Frontend developer from Uzbekistan with 2+ years building scalable web applications using Vue.js, Nuxt.js, and TypeScript.`,
+  keywords: [
+    "frontend developer",
+    "vue.js developer",
+    "nuxt.js",
+    "javascript",
+    "typescript",
+    "web development",
+    "portfolio",
+    "uzbekistan developer",
+  ],
+  type: "website",
+});
+
 const isMobile = ref(false);
 const loading = ref(false);
 

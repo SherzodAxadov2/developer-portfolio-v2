@@ -417,6 +417,21 @@ a.underline {
 
 <script>
 import DevConfig from "~/developer.json";
+
+useSEO({
+  title: `About ${DevConfig.name} | Frontend Developer`,
+  description: `Learn about ${DevConfig.name}, a frontend developer from Uzbekistan with 2+ years of experience in Vue.js, Nuxt.js, and TypeScript. Discover my professional journey, skills, and interests.`,
+  keywords: [
+    "about",
+    "frontend developer",
+    "vue.js experience",
+    "professional background",
+    "web developer skills",
+    "uzbekistan developer",
+  ],
+  type: "profile",
+});
+
 export default {
   data() {
     return {
