@@ -92,7 +92,7 @@
 import DevConfig from "~/developer.json";
 
 useSEO({
-  title: `Contact ${DevConfig.name} | Get In Touch`,
+  title: `${DevConfig.name} | Get In Touch`,
   description: `Get in touch with ${DevConfig.name}, a frontend developer from Uzbekistan. Available for freelance projects, collaborations, and full-time opportunities. Contact via email or social media.`,
   keywords: [
     "contact",
