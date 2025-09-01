@@ -1,3 +1,5 @@
+import DevConfig from "~/developer.json";
+
 interface SEOData {
   title?: string;
   description?: string;
@@ -11,7 +13,7 @@ interface SEOData {
 export const useSEO = (data: SEOData = {}) => {
   const route = useRoute();
 
-  const devConfig = require("~/developer.json");
+  const devConfig = DevConfig;
 
   const defaultTitle = `${devConfig.name} | ${devConfig.role}`;
   const defaultDescription = `${devConfig.name} - ${devConfig.role}. Frontend developer from Uzbekistan with 2+ years building scalable web applications using Vue.js ecosystem.`;
