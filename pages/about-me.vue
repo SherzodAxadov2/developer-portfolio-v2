@@ -415,7 +415,7 @@ a.underline {
 }
 </style>
 
-<script>
+<script setup>
 import DevConfig from "~/developer.json";
 
 useSEO({
@@ -432,71 +432,43 @@ useSEO({
   type: "profile",
 });
 
-export default {
-  data() {
-    return {
-      currentSection: "professional-info",
-      folder: "experience",
-      loading: true,
-    };
-  },
-  /**
-   * In setup we can define the data we want to use in the component before the component is created.
-   */
-  setup() {
-    return {
-      config: DevConfig,
-    };
-  },
-  computed: {
-    // Set active class to current page link
-    isActive() {
-      return (folder) => this.folder === folder;
-    },
-    isSectionActive() {
-      return (section) => this.currentSection === section;
-    },
-    isOpen() {
-      return (folder) => this.folder === folder;
-    },
-  },
-  methods: {
-    focusCurrentSection(section) {
-      this.currentSection = section.title;
-      this.folder = Object.keys(section.info)[0];
+const config = DevConfig;
+const currentSection = ref("professional-info");
+const folder = ref("experience");
+const loading = ref(false);
 
-      document
-        .getElementById("folders-" + section.title)
-        .classList.toggle("hidden"); // show folders
-      document
-        .getElementById("section-arrow-" + section.title)
-        .classList.toggle("rotate-90"); // rotate arrow
-    },
-    focusCurrentFolder(folder) {
-      this.folder = folder.title;
-      // handle if folder belongs to the current section. It happens when you click on a folder from a different section in mobile view.
-      this.currentSection = this.config.about.sections[this.currentSection]
-        .info[folder.title]
-        ? this.currentSection
-        : Object.keys(this.config.about.sections).find(
-            (section) => this.config.about.sections[section].info[folder.title]
-          );
-    },
-    /**
-     * TODO: Hay que crear un método para que cuando se haga click en un folder, se muestren los archivos que contiene. Y si se hace click en un archivo, se muestre el contenido del archivo.
-     * TODO:  Además de girar el icono del diple.
-     */
-    toggleFiles() {
-      document.getElementById("file-" + this.folder).classList.toggle("hidden");
-    },
-    /* Mobile */
-    showContacts() {
-      document.getElementById("contacts").classList.toggle("hidden");
-      document.getElementById("section-arrow").classList.toggle("rotate-90"); // rotate arrow
-    },
-  },
-  mounted() {
-    this.loading = false;
-  },
+const isActive = (folderName) => folder.value === folderName;
+const isSectionActive = (section) => currentSection.value === section;
+const isOpen = (folderName) => folder.value === folderName;
+const focusCurrentSection = (section) => {
+  currentSection.value = section.title;
+  folder.value = Object.keys(section.info)[0];
+
+  document
+    .getElementById("folders-" + section.title)
+    ?.classList.toggle("hidden");
+  document
+    .getElementById("section-arrow-" + section.title)
+    ?.classList.toggle("rotate-90");
+};
+
+const focusCurrentFolder = (folderObj) => {
+  folder.value = folderObj.title;
+  currentSection.value = config.about.sections[currentSection.value].info[
+    folderObj.title
+  ]
+    ? currentSection.value
+    : Object.keys(config.about.sections).find(
+        (section) => config.about.sections[section].info[folderObj.title]
+      );
+};
+
+const toggleFiles = () => {
+  document.getElementById("file-" + folder.value)?.classList.toggle("hidden");
+};
+
+const showContacts = () => {
+  document.getElementById("contacts")?.classList.toggle("hidden");
+  document.getElementById("section-arrow")?.classList.toggle("rotate-90");
 };
 </script>

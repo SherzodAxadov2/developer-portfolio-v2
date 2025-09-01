@@ -88,9 +88,10 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import DevConfig from "~/developer.json";
 
+// SEO for contact page
 useSEO({
   title: `${DevConfig.name} | Get In Touch`,
   description: `Get in touch with ${DevConfig.name}, a frontend developer from Uzbekistan. Available for freelance projects, collaborations, and full-time opportunities. Contact via email or social media.`,
@@ -105,70 +106,55 @@ useSEO({
   type: "website",
 });
 
-export default {
-  data() {
-    return {
-      name: "",
-      email: "",
-      message: "",
-    };
-  },
-  setup() {
-    return {
-      contact: DevConfig.contacts,
-    };
-  },
-  methods: {
-    open(elementId) {
-      const element = document.getElementById(elementId);
-      const arrow = element.querySelector(".arrow");
-      const links = element.querySelector("#links");
+const contact = DevConfig.contacts;
+const name = ref("");
+const email = ref("");
+const message = ref("");
 
-      if (links.style.display === "block") {
-        links.style.display = "none";
-        arrow.style.transform = "rotate(0deg)";
-      } else {
-        links.style.display = "block";
-        arrow.style.transform = "rotate(90deg)";
-      }
-    },
-  },
-  mounted() {
-    const nameInput = document.getElementById("name-input");
-    const emailInput = document.getElementById("email-input");
-    const messageInput = document.getElementById("message-input");
+const open = (elementId) => {
+  const element = document.getElementById(elementId);
+  const arrow = element.querySelector(".arrow");
+  const links = element.querySelector("#links");
 
-    nameInput.addEventListener("input", (event) => {
-      const nameValue = document.getElementById("name-value");
-      nameValue.innerHTML = event.target.value;
-    });
-
-    emailInput.addEventListener("input", (event) => {
-      const emailValue = document.getElementById("email-value");
-      emailValue.innerHTML = event.target.value;
-    });
-
-    messageInput.addEventListener("input", (event) => {
-      const messageValue = document.getElementById("message-value");
-      messageValue.innerHTML = event.target.value;
-    });
-
-    /**
-     * * Close all submenus
-     * ! This is a temporary solution.
-     * ! This is needed because when the page is loaded, height style on #links are not applied.
-     */
-    const links = document.getElementsByClassName("submenu");
-    for (let i = 0; i < links.length; i++) {
-      if (window.innerWidth > 1024) {
-        links[i].querySelector("#links").style.display = "block";
-        links[i].querySelector(".arrow").style.transform = "rotate(90deg)";
-      } else {
-        links[i].querySelector("#links").style.display = "none";
-      }
-    }
-  },
+  if (links.style.display === "block") {
+    links.style.display = "none";
+    arrow.style.transform = "rotate(0deg)";
+  } else {
+    links.style.display = "block";
+    arrow.style.transform = "rotate(90deg)";
+  }
 };
+
+onMounted(() => {
+  const nameInput = document.getElementById("name-input");
+  const emailInput = document.getElementById("email-input");
+  const messageInput = document.getElementById("message-input");
+
+  nameInput?.addEventListener("input", (event) => {
+    const nameValue = document.getElementById("name-value");
+    if (nameValue) nameValue.innerHTML = event.target.value;
+  });
+
+  emailInput?.addEventListener("input", (event) => {
+    const emailValue = document.getElementById("email-value");
+    if (emailValue) emailValue.innerHTML = event.target.value;
+  });
+
+  messageInput?.addEventListener("input", (event) => {
+    const messageValue = document.getElementById("message-value");
+    if (messageValue) messageValue.innerHTML = event.target.value;
+  });
+
+  const links = document.getElementsByClassName("submenu");
+  for (let i = 0; i < links.length; i++) {
+    if (window.innerWidth > 1024) {
+      links[i].querySelector("#links").style.display = "block";
+      links[i].querySelector(".arrow").style.transform = "rotate(90deg)";
+    } else {
+      links[i].querySelector("#links").style.display = "none";
+    }
+  }
+});
 </script>
 
 <style>
