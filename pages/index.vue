@@ -15,6 +15,7 @@
         <a
           href="/resume/Sherzod_Axadov.pdf"
           download="Sherzod_Resume.pdf"
+          id="resume"
           class="mt-4 inline-block px-4 py-1 text-white bg-[#0e2535] rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
         >
           Download My Resume
@@ -270,6 +271,11 @@ function handleResize() {
   to {
     border-right-color: transparent;
   }
+}
+
+#resume {
+  position: relative !important;
+  z-index: 100 !important;
 }
 
 /* mobile */
