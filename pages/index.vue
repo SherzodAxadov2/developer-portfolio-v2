@@ -16,7 +16,7 @@
           href="/resume/Sherzod_Axadov.pdf"
           download="Sherzod_Resume.pdf"
           id="resume"
-          class="mt-4 inline-block px-4 py-1 text-white bg-[#0e2535] rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition"
+          class="mt-4 inline-block px-4 py-1 text-white bg-[#0e2535] rounded-lg shadow-md hover:bg-blue-700 !outline-none transition"
         >
           Download My Resume
         </a>
