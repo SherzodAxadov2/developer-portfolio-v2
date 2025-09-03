@@ -113,6 +113,12 @@ export default defineNuxtConfig({
    */
   modules: ["@nuxtjs/tailwindcss"],
 
+  /**
+   * * Plugins
+   * Auto-loaded from plugins/ directory
+   * Vercel Analytics plugin will be loaded automatically
+   */
+
   components: {
     dirs: ["~/components"],
   },
