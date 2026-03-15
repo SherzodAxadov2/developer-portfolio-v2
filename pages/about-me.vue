@@ -284,18 +284,42 @@
           class="tab-height w-full h-full flex-none lg:hidden items-center"
         ></div>
 
-        <div id="gists-content" class="flex">
+        <!-- Certificate viewer -->
+        <div v-if="currentCertificate" id="certificate-content" class="flex h-full">
+          <div class="flex flex-col w-full lg:px-6 lg:py-4 px-5 py-4 overflow-hidden">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-white lg:text-menu-text text-sm">
+                // Achievements &amp; Certificates:
+              </h3>
+              <a
+                :href="currentCertificate"
+                target="_blank"
+                rel="noopener"
+                class="certificate-btn font-fira_regular text-xs px-3 py-1 rounded"
+              >
+                ↗ Open full screen
+              </a>
+            </div>
+            <div class="certificate-frame-wrapper flex-1 overflow-hidden">
+              <iframe
+                :src="currentCertificate + '#toolbar=0&navpanes=0'"
+                class="certificate-frame"
+                title="IELTS Certificate"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Gist snippets (default) -->
+        <div v-else id="gists-content" class="flex">
           <div
             id="gists"
             class="flex flex-col lg:px-6 lg:py-4 w-full overflow-hidden"
           >
-            <!-- title -->
             <h3 class="text-white lg:text-menu-text mb-4 text-sm">
               // Code snippet showcase:
             </h3>
-
             <div class="flex flex-col overflow-scroll">
-              <!-- snippets -->
               <GistSnippet
                 data-aos="fade-down"
                 v-for="(gist, key) in config.gists"
@@ -304,8 +328,6 @@
               />
             </div>
           </div>
-
-          <!-- scroll bar -->
           <div
             id="scroll-bar"
             class="h-full border-left hidden lg:flex justify-center py-1"
@@ -413,6 +435,47 @@ a.underline {
   color: white;
   text-decoration: underline;
 }
+
+#certificate-content {
+  height: 100%;
+  overflow: hidden;
+}
+
+.certificate-frame-wrapper {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  border: 1px solid #1e2d3d;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.certificate-frame {
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+  border: none;
+  display: block;
+  background: #fff;
+}
+
+.certificate-btn {
+  color: #607b96;
+  border: 1px solid #1e2d3d;
+  border-radius: 4px;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.certificate-btn:hover {
+  color: #ffffff;
+  border-color: #607b96;
+}
+
+@media (max-width: 1024px) {
+  .certificate-frame { min-height: 360px; }
+}
 </style>
 
 <script setup>
@@ -436,6 +499,11 @@ const config = DevConfig;
 const currentSection = ref("professional-info");
 const folder = ref("experience");
 const loading = ref(false);
+
+const currentCertificate = computed(() => {
+  const info = config.about.sections[currentSection.value]?.info;
+  return info?.[folder.value]?.certificate ?? null;
+});
 
 const isActive = (folderName) => folder.value === folderName;
 const isSectionActive = (section) => currentSection.value === section;

@@ -11,28 +11,16 @@
           _hello
         </NuxtLink>
 
-        <NuxtLink
-          id="nav-link"
-          to="/about-me"
-          :class="{ active: isActive('/about-me') }"
-        >
+        <NuxtLink id="nav-link" to="/about-me" :class="{ active: isActive('/about-me') }">
           _about-me
         </NuxtLink>
 
-        <NuxtLink
-          id="nav-link"
-          to="/projects"
-          :class="{ active: isActive('/projects') }"
-        >
+        <NuxtLink id="nav-link" to="/projects" :class="{ active: isActive('/projects') }">
           _projects
         </NuxtLink>
       </div>
 
-      <NuxtLink
-        id="nav-link-contact"
-        to="/contact-me"
-        :class="{ active: isActive('/contact-me') }"
-      >
+      <NuxtLink id="nav-link-contact" to="/contact-me" :class="{ active: isActive('/contact-me') }">
         _contact-me
       </NuxtLink>
     </nav>
@@ -93,7 +81,7 @@ export default {
   @apply text-menu-text;
 }
 
-#navbar > nav {
+#navbar>nav {
   height: 45px;
   font-size: 13px;
 }

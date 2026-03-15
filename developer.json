@@ -19,6 +19,11 @@
           "soft-skills": {
             "title": "soft-skills",
             "description": "In addition to technical expertise, I bring a robust set of soft skills that enhance my ability to work effectively in diverse teams:<br><br>- **Team Collaboration:** An effective team player who thrives in collaborative environments, fostering innovation and open communication.<br><br>- **Problem-Solving:** A solution-focused approach to overcoming challenges, ensuring smooth project execution under tight deadlines.<br><br>- **Adaptability:** Quick to learn and adapt to new technologies and methodologies in a constantly evolving landscape.<br><br>- **Communication:** Strong ability to articulate technical concepts clearly to both technical and non-technical audiences.<br><br>- **Creativity:** Combines technical proficiency with creative thinking to deliver user-centric, impactful solutions.<br><br>These skills complement my technical abilities, empowering me to contribute meaningfully to both individual and team success."
+          },
+          "achievements": {
+            "title": "achievements",
+            "description": "<br><strong>IELTS Certificate</strong><br><em>International English Language Testing System</em><br><br>Certified proof of English language proficiency at an international standard, issued by the IDP.",
+            "certificate": "/certificates/IELTS-Certificate.pdf"
           }
         }
       },
@@ -134,28 +139,37 @@
       "title": "_zett",
       "description": "Business management platform with inventory, sales and reporting modules.",
       "img": "/images/projects/zett.png",
-      "tech": ["Vue"],
+      "tech": [
+        "Vue"
+      ],
       "url": "https://app.zett.uz"
     },
     "2": {
       "title": "_it-park",
       "description": "IT Park management system with authentication and user portal.",
       "img": "/images/projects/it-park.png",
-      "tech": ["Vue"],
+      "tech": [
+        "Vue"
+      ],
       "url": "https://my.it-park.uz/login-esi"
     },
     "3": {
       "title": "_pmi",
       "description": "Government project management interface for MIIT ministry.",
       "img": "/images/projects/pmi.png",
-      "tech": ["Vue"],
+      "tech": [
+        "Vue"
+      ],
       "url": "https://pmi.miit.uz"
     },
     "4": {
       "title": "_reyting",
       "description": "Rating and evaluation system for government institutions.",
       "img": "/images/projects/reyting.png",
-      "tech": ["Vue", "Nuxt"],
+      "tech": [
+        "Vue",
+        "Nuxt"
+      ],
       "url": "https://reyting.miit.uz/"
     }
   }

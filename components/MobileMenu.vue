@@ -46,7 +46,7 @@ const config = ref(DevConfig);
 
 const menuOpen = ref(false);
 
-function toggleMobileMenu(){
+function toggleMobileMenu() {
   menuOpen.value = !menuOpen.value;
 
   const menu = document.getElementById('menu');
@@ -61,7 +61,7 @@ function toggleMobileMenu(){
   }
 };
 
-function goHome(){
+function goHome() {
   const menu = document.getElementById('menu');
   if (!menu.classList.contains('hidden')) {
     menu.classList.toggle('hidden');
