@@ -14,10 +14,10 @@
         <NuxtLink id="nav-link" to="/about-me" :class="{ active: isActive('/about-me') }">
           _about-me
         </NuxtLink>
-
+        <!-- 
         <NuxtLink id="nav-link" to="/projects" :class="{ active: isActive('/projects') }">
           _projects
-        </NuxtLink>
+        </NuxtLink> -->
       </div>
 
       <NuxtLink id="nav-link-contact" to="/contact-me" :class="{ active: isActive('/contact-me') }">

@@ -134,7 +134,7 @@
     "1": "636a169f17d2774d1daab2cfd84ad17f",
     "2": "4772dfe96900d3c264d8a0e457269b2f"
   },
-  "projects": {
+  "_disabled_projects": {
     "1": {
       "title": "_zett",
       "description": "Business management platform with inventory, sales and reporting modules.",
