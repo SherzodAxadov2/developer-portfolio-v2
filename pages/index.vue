@@ -58,7 +58,7 @@ const config = ref(DevConfig);
 
 useSEO({
   title: `${DevConfig.name} | ${DevConfig.role}`,
-  description: `${DevConfig.name} - ${DevConfig.role}. Frontend developer from Uzbekistan with 2+ years building scalable web applications using Vue.js, Nuxt.js, and TypeScript.`,
+  description: `${DevConfig.name} - ${DevConfig.role}. Frontend developer from Uzbekistan with ${yearsOfExperience()}+ years building scalable web applications using Vue.js, Nuxt.js, and TypeScript.`,
   keywords: [
     "frontend developer",
     "vue.js developer",

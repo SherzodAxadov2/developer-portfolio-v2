@@ -16,7 +16,7 @@ export const useSEO = (data: SEOData = {}) => {
   const devConfig = DevConfig;
 
   const defaultTitle = `${devConfig.name} | ${devConfig.role}`;
-  const defaultDescription = `${devConfig.name} - ${devConfig.role}. Frontend developer from Uzbekistan with 2+ years building scalable web applications using Vue.js ecosystem.`;
+  const defaultDescription = `${devConfig.name} - ${devConfig.role}. Frontend developer from Uzbekistan with ${yearsOfExperience()}+ years building scalable web applications using Vue.js ecosystem.`;
   const defaultImage = "/images/demo-share.png";
   const baseUrl = "https://axadev.uz";
 

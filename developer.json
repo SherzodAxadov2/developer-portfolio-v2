@@ -2,6 +2,7 @@
   "name": "Sherzod Axadov",
   "logo_name": "Sherzod Aaxdov",
   "role": "Front-end developer",
+  "careerStart": "2023-01",
   "about": {
     "sections": {
       "professional-info": {
@@ -33,7 +34,7 @@
         "info": {
           "bio": {
             "title": "bio",
-            "description": "<br><strong>About me</strong><br>Frontend developer from Uzbekistan with 2+ years building scalable web applications. Passionate about Vue.js ecosystem and creating user-centric solutions that solve real business problems."
+            "description": "<br><strong>About me</strong><br>Frontend developer from Uzbekistan with {years}+ years building scalable web applications. Passionate about Vue.js ecosystem and creating user-centric solutions that solve real business problems."
           },
           "interests": {
             "title": "interests",

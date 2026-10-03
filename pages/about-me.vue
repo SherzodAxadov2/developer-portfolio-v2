@@ -258,7 +258,7 @@
           <div class="w-full h-full ml-5 mr-10 lg:my-5 overflow-scroll">
             <CommentedText
               :text="
-                config.about.sections[currentSection]?.info[folder].description
+                config.about.sections[currentSection]?.info[folder].description?.replace('{years}', yearsOfExperience())
               "
             />
           </div>
@@ -483,7 +483,7 @@ import DevConfig from "~/developer.json";
 
 useSEO({
   title: `${DevConfig.name} | Frontend Developer`,
-  description: `Learn about ${DevConfig.name}, a frontend developer from Uzbekistan with 2+ years of experience in Vue.js, Nuxt.js, and TypeScript. Discover my professional journey, skills, and interests.`,
+  description: `Learn about ${DevConfig.name}, a frontend developer from Uzbekistan with ${yearsOfExperience()}+ years of experience in Vue.js, Nuxt.js, and TypeScript. Discover my professional journey, skills, and interests.`,
   keywords: [
     "about",
     "frontend developer",

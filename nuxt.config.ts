@@ -1,6 +1,7 @@
+import { yearsOfExperience } from "./utils/experience";
 const config = require("./developer.json");
 const siteTitle = `${config.name} | ${config.role}`;
-const siteDescription = `${config.name} - ${config.role}. Frontend developer from Uzbekistan with 2+ years building scalable web applications using Vue.js ecosystem.`;
+const siteDescription = `${config.name} - ${config.role}. Frontend developer from Uzbekistan with ${yearsOfExperience()}+ years building scalable web applications using Vue.js ecosystem.`;
 
 /*
  * Nuxt 3 Config File
